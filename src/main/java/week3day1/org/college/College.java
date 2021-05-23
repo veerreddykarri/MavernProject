@@ -1,4 +1,4 @@
-package org.college;
+package week3day1.org.college;
 
 public class College {
     public void collegeName(){
