@@ -1,6 +1,6 @@
-package org.student;
+package week3day1.org.student;
 
-import org.department.Department;
+import week3day1.org.department.Department;
 
 public class Student extends Department {
     public void studentName(){

@@ -1,4 +1,4 @@
-package org.bank;
+package week3day1.org.bank;
 
 public class BankInfo {
     public void saving(){

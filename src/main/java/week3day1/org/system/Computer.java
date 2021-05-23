@@ -1,4 +1,4 @@
-package org.system;
+package week3day1.org.system;
 
 public class Computer {
     public void computerModel(){
