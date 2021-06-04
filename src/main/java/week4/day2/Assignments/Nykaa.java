@@ -75,19 +75,21 @@ public class Nykaa {
         //12) Go to Shopping Bag
         driver.findElementByXPath("//div[@class='AddBagIcon']").click();
         //13) Print the Grand Total amount
-        String grandTotal = driver.findElementByXPath("//div[@class='value medium-strong']").getText();
-        System.out.println("The Grand Total amount is :"+grandTotal);
+        String grandTotal = driver.findElementByXPath("(//div[contains(@class,'value')])[5]").getText().replaceAll("[₹]","").trim();
+        System.out.println("The Grand Total amount is ₹ :"+grandTotal);
         Thread.sleep(2000);
         //14) Click Proceed
         driver.findElementByXPath("//button[@class='btn full fill no-radius proceed ']").click();
         Thread.sleep(5000);
         //15) Click on Continue as Guest
-        driver.findElementByXPath("//button[@class='btn full big']").click();
+        driver.findElement(By.xpath("//button[@type='button' and contains(@class,'full big')]")).click();
+        Thread.sleep(3000);
         //16) Check if this grand total is the same in step 13
-        String checkoutGrandTotal = driver.findElementByXPath("//div[text()='Grand Total']/following-sibling::div").getText();
-        if (grandTotal==checkoutGrandTotal){
-            System.out.println("The Grand Total is same as the Grand Total in Shopping Bag");
+        String checkoutGrandTotal = driver.findElementByXPath("//div[text()='Grand Total']/following-sibling::div").getText().replaceAll("[₹]","").trim();
+        System.out.println("The Checkout Grand Total amount is ₹ : "+checkoutGrandTotal);
+        if (grandTotal.equals(checkoutGrandTotal)){
+            System.out.println("The Checkout Grand Total is same as the Grand Total in Shopping Bag");
         }else System.out.println("The Grand Total is NOT same as the Grand Total in Shopping Bag");
-        driver.close();
+        driver.quit();
     }
 }

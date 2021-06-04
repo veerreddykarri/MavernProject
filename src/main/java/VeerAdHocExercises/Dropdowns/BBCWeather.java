@@ -53,8 +53,8 @@ public class BBCWeather {
             String pressureString1 = addValues1.get(1).replaceAll("[mb]", "").trim();
             int pressureTomorrowAt10 = Integer.parseInt(pressureString1);
             System.out.println("The Pressure value for Tomorrow at 10 PM is : " + pressureTomorrowAt10);
-            System.out.println("The difference between Today's and Tomorrow's pressure is: " + (pressureTodayAt10 - pressureTomorrowAt10));
-        } else System.out.println("The time has passed 10PM try again tomorrow");
+            System.out.println("The difference between Today's and Tomorrow's pressure is : " + (pressureTodayAt10 - pressureTomorrowAt10));
+        } else System.out.println("The time has passed 10PM Today try again Tomorrow");
         driver.close();
         driver.quit();
     }
