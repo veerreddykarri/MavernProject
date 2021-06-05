@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestCasesForLead_Sequence">
+    <test thread-count="3" name="runTestsForLead_Sequence" verbose="5">
+        <classes>
+            <class name="week5.day1.testcase.BaseClass"/>
+            <class name="week5.day1.testcase.CreateLead"/>
+            <class name="week5.day1.testcase.DeleteLead"/>
+            <class name="week5.day1.testcase.DuplicateLead"/>
+            <class name="week5.day1.testcase.EditLead"/>
+            <class name="week5.day1.testcase.MergeLeads"/>
+        </classes>
+    </test> <!-- MavernProject -->
+</suite> <!-- Default Suite -->
