@@ -22,7 +22,7 @@ public class BaseClass {
         driver.findElement(By.className("decorativeSubmit")).click();
         driver.findElement(By.linkText("CRM/SFA")).click();
         driver.findElement(By.linkText("Leads")).click();
-        driver.findElement(By.linkText("Create Lead")).click();
+
     }
     @AfterMethod
     public void postCondition(){
