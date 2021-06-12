@@ -50,10 +50,10 @@ public class SnapDeal {
         System.out.println(copyOfProduct_PriceList);
         boolean sorted = copyOfProduct_PriceList.equals(product_price);
         System.out.println("The items are sorted correctly :"+sorted);
-        WebElement firstItemPrice = driver.findElementByXPath("//span[contains(@id,'display-price')]");
+        WebElement firstItemPrice = driver.findElementByXPath("(//span[contains(@id,'display-price')])[2]");
         builder.moveToElement(firstItemPrice)
                 .pause(500)
-                .click(driver.findElementByXPath("//div[contains(text(),'Quick View')]"))
+                .click(driver.findElementByXPath("(//div[contains(text(),'Quick View')])[2]"))
                 .perform();
         System.out.println("The Price of the item is Rs.:"+driver.findElementByXPath("//span[@class='payBlkBig']").getText());
         System.out.println("The Discount percentage on the item is :"+(driver.findElementByXPath("//span[@class='percent-desc ']").getText().replaceAll("([OFF])","").trim()));
