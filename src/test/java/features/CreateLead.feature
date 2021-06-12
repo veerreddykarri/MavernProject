@@ -4,9 +4,9 @@ Feature: Create Lead functionality of Leaftaps CRM application
     And Login to CRM Application
   Scenario Outline: TC003_Create Lead
     Given Click on Create Lead
-    And Enter Mandatory Fields Data on Create Lead Form<companyname>,<forename>,<surname>
+    And Enter Mandatory Fields Data on Create Lead Form<companyname>,<forename>,<surname>,<phonenumber>
     When Clicked on Create Lead Button
     Then Lead created successfully
     Examples:
-      |companyname|forename|surname|
-      |'Jiya Technologies'|'Veer'|'Karri'|
+      |companyname|forename|surname|phonenumber|
+      |'Jiya Technologies'|'Veer'|'Karri'|'98'|
