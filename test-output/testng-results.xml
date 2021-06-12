@@ -1,90 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-06-06T09:35:36 BST" name="TestCasesForLead_Sequence_Parameterization" finished-at="2021-06-06T09:36:05 BST" duration-ms="28601">
+  <suite started-at="2021-06-13T17:47:22 BST" name="Default Suite" finished-at="2021-06-13T17:47:22 BST" duration-ms="40">
     <groups>
     </groups>
-    <test started-at="2021-06-06T09:35:36 BST" name="runTestsForLead_Sequence_Parameterization" finished-at="2021-06-06T09:36:05 BST" duration-ms="28601">
-      <class name="week5.day2.datawithexceltorunsingletime.EditLead">
-        <test-method is-config="true" signature="preCondition()[pri:0, instance:week5.day2.datawithexceltorunsingletime.EditLead@429bd883]" started-at="2021-06-06T09:35:50 BST" name="preCondition" finished-at="2021-06-06T09:35:58 BST" duration-ms="7444" status="PASS">
+    <test started-at="2021-06-13T17:47:22 BST" name="MavernProject" finished-at="2021-06-13T17:47:22 BST" duration-ms="40">
+      <class name="week6.day2.RegressionTestCases">
+        <test-method signature="createLead()[pri:0, instance:week6.day2.RegressionTestCases@77be656f]" started-at="2021-06-13T17:47:22 BST" name="createLead" finished-at="2021-06-13T17:47:22 BST" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preCondition -->
-        <test-method signature="runEditLead(java.lang.String, java.lang.String)[pri:0, instance:week5.day2.datawithexceltorunsingletime.EditLead@429bd883]" started-at="2021-06-06T09:35:58 BST" name="runEditLead" data-provider="fetchData" finished-at="2021-06-06T09:36:05 BST" duration-ms="7028" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Amazon]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[98]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- createLead -->
+        <test-method signature="deleteLead()[pri:0, instance:week6.day2.RegressionTestCases@77be656f]" started-at="2021-06-13T17:47:22 BST" name="deleteLead" finished-at="2021-06-13T17:47:22 BST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runEditLead -->
-        <test-method is-config="true" signature="postCondition()[pri:0, instance:week5.day2.datawithexceltorunsingletime.EditLead@429bd883]" started-at="2021-06-06T09:36:05 BST" name="postCondition" finished-at="2021-06-06T09:36:05 BST" duration-ms="146" status="PASS">
+        </test-method> <!-- deleteLead -->
+        <test-method signature="duplicateLead()[pri:0, instance:week6.day2.RegressionTestCases@77be656f]" started-at="2021-06-13T17:47:22 BST" name="duplicateLead" finished-at="2021-06-13T17:47:22 BST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postCondition -->
-      </class> <!-- week5.day2.datawithexceltorunsingletime.EditLead -->
-      <class name="week5.day2.datawithexceltorunsingletime.CreateLead">
-        <test-method is-config="true" signature="preCondition(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:week5.day2.datawithexceltorunsingletime.CreateLead@345965f2]" started-at="2021-06-06T09:35:37 BST" name="preCondition" finished-at="2021-06-06T09:35:48 BST" duration-ms="10647" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[http://leaftaps.com/opentaps/]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[DemoSalesManager]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[crmsfa]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- duplicateLead -->
+        <test-method signature="editLead()[pri:0, instance:week6.day2.RegressionTestCases@77be656f]" started-at="2021-06-13T17:47:22 BST" name="editLead" finished-at="2021-06-13T17:47:22 BST" duration-ms="0" status="FAIL">
+          <exception class="java.util.NoSuchElementException">
+            <full-stacktrace>
+              <![CDATA[java.util.NoSuchElementException
+at week6.day2.RegressionTestCases.editLead(RegressionTestCases.java:19)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.util.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preCondition -->
-        <test-method signature="runCreateLead(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:week5.day2.datawithexceltorunsingletime.CreateLead@345965f2]" started-at="2021-06-06T09:35:48 BST" name="runCreateLead" data-provider="fetchData" finished-at="2021-06-06T09:35:50 BST" duration-ms="2548" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[HMRC]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Veer]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Karri]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[98]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- editLead -->
+        <test-method signature="mergeLead()[pri:0, instance:week6.day2.RegressionTestCases@77be656f]" started-at="2021-06-13T17:47:22 BST" name="mergeLead" finished-at="2021-06-13T17:47:22 BST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runCreateLead -->
-        <test-method is-config="true" signature="postCondition()[pri:0, instance:week5.day2.datawithexceltorunsingletime.CreateLead@345965f2]" started-at="2021-06-06T09:35:50 BST" name="postCondition" finished-at="2021-06-06T09:35:50 BST" duration-ms="145" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postCondition -->
-      </class> <!-- week5.day2.datawithexceltorunsingletime.CreateLead -->
-    </test> <!-- runTestsForLead_Sequence_Parameterization -->
-  </suite> <!-- TestCasesForLead_Sequence_Parameterization -->
+        </test-method> <!-- mergeLead -->
+      </class> <!-- week6.day2.RegressionTestCases -->
+    </test> <!-- MavernProject -->
+  </suite> <!-- Default Suite -->
 </testng-results>

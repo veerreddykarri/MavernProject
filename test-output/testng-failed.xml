@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [TestCasesForLead]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="classes" name="runTestsForLead(failed)">
+<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="MavernProject(failed)">
     <classes>
-      <class name="week5.day1.testcase.MergeLead">
+      <class name="week6.day2.RegressionTestCases">
         <methods>
-          <include name="runMergeLead"/>
-          <include name="preCondition"/>
-          <include name="postCondition"/>
+          <include name="editLead"/>
         </methods>
-      </class> <!-- week5.day1.testcase.MergeLead -->
+      </class> <!-- week6.day2.RegressionTestCases -->
     </classes>
-  </test> <!-- runTestsForLead(failed) -->
-</suite> <!-- Failed suite [TestCasesForLead] -->
+  </test> <!-- MavernProject(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

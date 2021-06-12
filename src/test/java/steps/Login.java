@@ -8,19 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class Login extends BaseClass{
-    @Given("Open the chrome browser")
-    public void openBrowser() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
 
-    @And("Load the URL {string}")
-    public void loadURL(String url) {
-        driver.get(url);
-    }
 
-    @And("Enter the username as {string}")
+    @Given("Enter the username as {string}")
     public void enterUserName(String userName) {
         driver.findElement(By.id("username")).sendKeys(userName);
 
@@ -41,20 +31,15 @@ public class Login extends BaseClass{
     public void verifyHomePage() {
         String title = driver.getTitle();
         System.out.println(title);
-        driver.close();
-        driver.quit();
     }
     @But("Error message should be displayed")
     public void errorMessage()
     {
         System.out.println("Error message");
-        driver.close();
-        driver.quit();
     }
 
     @And("Login to CRM Application")
     public void loginToCRMApplication() {
-        driver.get("http://leaftaps.com/opentaps/");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
         driver.findElement(By.id("password")).sendKeys("crmsfa");

@@ -31,8 +31,6 @@ public class LeadsTestCases extends BaseClass {
     @Then("Lead created successfully")
     public void leadCreatedSuccessfully() {
         System.out.println("The Lead Created Successfully");
-        driver.close();
-        driver.quit();
     }
 
     @Given("Click on Find Lead")
@@ -68,8 +66,6 @@ public class LeadsTestCases extends BaseClass {
     @Then("Lead Updated successfully")
     public void leadUpdatedSuccessfully() {
         System.out.println("Lead edited successfully");
-        driver.close();
-        driver.quit();
     }
     String leadID ="";
     @And("Store the Lead ID")
