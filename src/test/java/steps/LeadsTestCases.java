@@ -8,17 +8,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 public class LeadsTestCases extends BaseClass{
-    @And("Click on CRM SFA")
-    public void clickOnCRMSFA() {
-        driver.findElement(By.linkText("CRM/SFA")).click();
-    }
 
-    @And("Click on Leads")
-    public void clickOnLeads() {
-        driver.findElement(By.linkText("Leads")).click();
-    }
-
-    @And("Click on Create Lead")
+    @Given("Click on Create Lead")
     public void clickOnCreateLead() {
         driver.findElementByLinkText("Create Lead").click();
     }
