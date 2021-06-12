@@ -7,7 +7,8 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
-public class LeadsTestCases extends BaseClass{
+
+public class LeadsTestCases extends BaseClass {
 
     @Given("Click on Create Lead")
     public void clickOnCreateLead() {
@@ -15,7 +16,7 @@ public class LeadsTestCases extends BaseClass{
     }
 
     @And("Enter Mandatory Fields Data on Create Lead Form{string},{string},{string}")
-    public void enterMandatoryFieldsDataOnCreateLeadForm(String companyName,String fName, String surname) {
+    public void enterMandatoryFieldsDataOnCreateLeadForm(String companyName, String fName, String surname) {
         driver.findElement(By.id("createLeadForm_companyName")).sendKeys(companyName);
         driver.findElement(By.id("createLeadForm_firstName")).sendKeys(fName);
         driver.findElement(By.id("createLeadForm_lastName")).sendKeys(surname);

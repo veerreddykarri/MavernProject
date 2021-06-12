@@ -7,8 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Login extends BaseClass {
-
+public class Login extends BaseClass{
     @Given("Open the chrome browser")
     public void openBrowser() {
         WebDriverManager.chromedriver().setup();
