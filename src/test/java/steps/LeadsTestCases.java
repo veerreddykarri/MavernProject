@@ -92,6 +92,8 @@ public class LeadsTestCases extends BaseClass {
         } else {
             System.out.println("Text not matched");
         }
+        driver.close();
+        driver.quit();
     }
 
 
