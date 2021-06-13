@@ -4,6 +4,9 @@
     <parameter name="url" value="http://leaftaps.com/opentaps/"/>
     <parameter name="userid" value="DemoSalesManager"/>
     <parameter name="password" value="crmsfa"/>
+    <listeners>
+        <listener class-name="week6.day2.RetryListener"/>
+    </listeners>
     <test thread-count="3" name="runTestsForLead_Parallel_Parameterization" parallel="classes" verbose="5">
         <classes>
             <class name="week5.day2.assignments.BaseClass"/>

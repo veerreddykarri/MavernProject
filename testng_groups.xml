@@ -8,7 +8,9 @@
             <!-- <exclude name="functional"></exclude> -->
         </run>
     </groups>
-
+    <listeners>
+        <listener class-name="week6.day2.RetryListener"/>
+    </listeners>
     <test thread-count="5" name="Test">
         <classes>
             <class name="week6.day2.LeafTapTestCases" />
