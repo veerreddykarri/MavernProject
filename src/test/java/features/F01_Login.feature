@@ -9,7 +9,7 @@ Examples:
     |username|password|
     |'demosalesmanager'|'crmsfa'|
     |'democsr'|'crmsfa'|
-@regression
+@smoke
   Scenario: TC002_Login with negative data
     Given Enter the username as 'demosalesmanager'
     And Enter the password as 'crmsfa123'

@@ -1,5 +1,5 @@
 Feature: Edit Lead functionality of Leaftaps CRM application
-  @regression
+  @functional
   Scenario Outline: TC004_Edit Lead
     Given Login to CRM Application
     And Click on Find Lead

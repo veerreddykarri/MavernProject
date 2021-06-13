@@ -7,8 +7,13 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
-public class LeadsTestCases extends BaseClass {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+public class LeadsTestCases<trimLeadID> extends BaseClass {
 
     @Given("Click on Create Lead")
     public void clickOnCreateLead() {
@@ -92,9 +97,79 @@ public class LeadsTestCases extends BaseClass {
         } else {
             System.out.println("Text not matched");
         }
-        driver.close();
-        driver.quit();
     }
 
 
+    @When("Clicked on Duplicate Lead button")
+    public void clickedOnDuplicateLeadButton() {
+        driver.findElement(By.linkText("Duplicate Lead")).click();
+    }
+
+    @And("Click on Submit Button")
+    public void clickOnSubmitButton() {
+        driver.findElement(By.name("submitButton")).click();
+    }
+
+    @Then("Verify the duplicate lead has been created")
+    public void verifyTheDuplicateLeadHasBeenCreated() {
+        System.out.println(" Duplicate Lead has been created successfully");
+    }
+
+    @And("Click on Merger Lead Option")
+    public void clickOnMergerLeadOption() {
+        driver.findElementByXPath("//a[text()='Merge Leads']").click();
+    }
+
+    @And("Click on First Image icon")
+    public void clickOnFirstImageIcon() {
+        driver.findElementByXPath("(//img[@alt='Lookup'])[1]").click();
+    }
+String leadIDForMerge="";
+    String trimLeadID ="";
+    @And("Select the First Lead in the table")
+    public void selectTheFirstLeadInTheTable() {
+        Set<String> handler =driver.getWindowHandles();
+        List<String> extractWindows = new ArrayList<String>(handler);
+        driver.switchTo().window(extractWindows.get(1));
+        leadIDForMerge = driver.findElementByXPath("(//div[@class='x-grid3-cell-inner x-grid3-col-partyId']/a)[1]").getText();
+        trimLeadID = leadIDForMerge.replaceAll("[a-zA-Z()]", "").trim();
+        System.out.println(trimLeadID);
+        driver.findElementByXPath("(//div[@class='x-grid3-cell-inner x-grid3-col-partyId']/a)[1]").click();
+        driver.switchTo().window(extractWindows.get(0));
+    }
+
+    @And("Click on Second Image icon")
+    public void clickOnSecondImageIcon() {
+        driver.findElementByXPath("(//img[@alt='Lookup'])[2]").click();
+    }
+
+    @And("Select the Second Lead in the table")
+    public void selectTheSecondLeadInTheTable() throws InterruptedException {
+        Thread.sleep(5000);
+        Set<String> handler1 =driver.getWindowHandles();
+        List<String> extractWindows1 = new ArrayList<String>(handler1);
+        driver.switchTo().window(extractWindows1.get(1));
+        driver.findElementByXPath("(//div[@class='x-grid3-cell-inner x-grid3-col-partyId']/a)[2]").click();
+        driver.switchTo().window(extractWindows1.get(0));
+    }
+
+    @When("Clicked on Merge Lead button")
+    public void clickedOnMergeLeadButton() {
+        driver.findElementByXPath("//a[@class='buttonDangerous']").click();
+    }
+
+    @And("Click on Ok on the alert popup")
+    public void clickOnOkOnTheAlertPopup() {
+        driver.switchTo().alert().accept();
+    }
+String companyName = "";
+    @Then("Verify the two lead has been merged")
+    public void verifyTheTwoLeadHasBeenMerged() {
+        companyName =driver.findElementByXPath("//span[@id='viewLead_companyName_sp']").getText();
+        System.out.println(companyName);
+        driver.findElementByXPath("//a[text()='Find Leads']").click();
+        driver.findElementByXPath("//input[@name='id']").sendKeys(trimLeadID);
+        driver.findElementByXPath("//button[text()='Find Leads']").click();
+        Assert.assertEquals(driver.findElementByXPath("//div[contains(text(),'No records to display')]").getText(),"No records to display");
+    }
 }
